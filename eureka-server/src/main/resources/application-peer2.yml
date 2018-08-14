@@ -1,0 +1,14 @@
+server:
+  port: 8769
+
+eureka:
+  instance:
+    hostname: peer2
+  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/ #register self to another Register Center
+
+spring:
+  profiles: peer2

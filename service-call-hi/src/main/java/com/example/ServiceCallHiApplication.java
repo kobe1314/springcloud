@@ -1,28 +1,19 @@
-package com.hsbc;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-import brave.sampler.Sampler;
-
 @SpringBootApplication
-//@EnableEurekaClient
-public class ServiceHiApplication {
+public class ServiceCallHiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServiceHiApplication.class, args);
+		SpringApplication.run(ServiceCallHiApplication.class, args);
 	}
 	
 	@Bean
-	public RestTemplate restTemplate() {
+	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
-	
-	
-	@Bean
-    public Sampler defaultSampler() {
-        return Sampler.ALWAYS_SAMPLE;
-    }
 }
